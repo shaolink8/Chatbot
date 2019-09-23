@@ -1,0 +1,45 @@
+<aiml version="1.0.1" encoding="UTF-8">
+<!-- basic_chat.aiml -->
+
+    <category>
+        <pattern>HELLO</pattern>
+        <template>
+            Well, hello!
+        </template>
+    </category>
+
+    <category>
+        <pattern>I AM *</pattern>
+        <template>Hello <think><set name="username"><star/></set></think></template>
+    </category>
+
+    <category>
+        <pattern>WHAT IS MY NAME</pattern>
+        <template>Your name is <get name="username" /></template>
+    </category>
+
+    <category>
+        <pattern>GOOD NIGHT</pattern>
+        <template>Good night <get name="username"/></template>
+    </category>
+    
+    <category>
+        <pattern>WHAT ARE YOU</pattern>
+        <template>
+            I'm a bot, silly!
+        </template>
+    </category>
+    <category>
+        <pattern>HOW IS THE WEATHER IN *</pattern>
+        <template>weather <star/></template>
+    </category>
+    <category>
+        <pattern>TELL ME A JOKE</pattern>
+        <template>joke</template>
+    </category>
+    <category>
+        <pattern>TELL ME ABOUT *</pattern>
+        <template>wikipedia <star/></template>
+    </category>
+    
+</aiml>
