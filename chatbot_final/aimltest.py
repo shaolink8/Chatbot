@@ -36,12 +36,12 @@ def voiceResponse(text):
 
 while True:
     try:
-        print "I'm Listening..."
+        print ("I'm Listening...")
         with mic as source:
             audio = r.listen(source)
-            print "Processing your speech..."
+            print ("Processing your speech...")
             voiceText = r.recognize_google(audio)
-            print "Finding a suitable response"
+            print ("Finding a suitable response")
             response = kernel.respond(voiceText)
             responseParts = response.split()
             if len(responseParts) > 0:
@@ -69,5 +69,5 @@ while True:
             else:
                 voiceResponse("I couldn't get you")
     except sr.UnknownValueError as e:
-        print e
+        print (e)
         
