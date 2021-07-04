@@ -1,0 +1,64 @@
+<aiml version="1.0.1" encoding="utf-8">
+
+
+	<category>
+		<pattern>HELLO</pattern>
+		<template>Hello. Welcome to Shaolin's World.</template>
+	</category>
+
+	
+	<category>
+        	<pattern>I AM *</pattern>
+        	<template>Hello <think><set name="username"><star/></set></think></template>
+    	</category>
+
+
+	<category>
+        	<pattern>I AM FEELING SAD *</pattern>
+        	<template>That's okay, I'm here to hear you out, <get name="username"/>!</template>
+    	</category>
+
+
+	<category>
+        	<pattern>HOW WAS YOUR DAY</pattern>
+        	<template>Depends on how yours was, <get name="username"/></template>
+    	</category>
+
+
+	<category>
+        	<pattern>GOOD NIGHT</pattern>
+        	<template>Good night <get name="username"/></template>
+    	</category>
+    
+
+    	<category>
+	        <pattern>WHAT ARE YOU</pattern>
+        	<template>I'm a dream come true</template>
+    	</category>
+
+
+	<category>
+        	<pattern>WHAT IS MY NAME</pattern>
+        	<template>Your name is <get name="username" /></template>
+    	</category>	
+
+	
+	<category>
+		<pattern>HOW IS THE WEATHER IN *</pattern>
+		<template>weather <star/></template>
+	</category>
+
+	
+	<category>
+		<pattern>TELL ME A JOKE</pattern>
+		<template>joke</template>
+	</category>
+
+	
+	<category>
+		<pattern>TELL ME ABOUT *</pattern>
+		<template>wikipedia <star/></template>
+	</category>
+
+	
+</aiml>	

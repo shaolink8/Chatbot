@@ -10,7 +10,7 @@ r = sr.Recognizer()
 mic = sr.Microphone()
 
 kernel = aiml.Kernel()
-kernel.learn("text.xml")
+kernel.learn("learn.xml")
 
 #weather codes
 def getWeather(city):
@@ -36,20 +36,21 @@ def voiceResponse(text):
 
 while True:
     try:
-        print ("I'm Listening...")
+        print ("\nSpeak..")
         with mic as source:
             audio = r.listen(source)
-            print ("Processing your speech...")
+            print ("\nProcessing what you just said..")
             voiceText = r.recognize_google(audio)
-            print ("Finding a suitable response")
+            print ("\nFinding a suitable response\n")
             response = kernel.respond(voiceText)
             responseParts = response.split()
             if len(responseParts) > 0:
                 if responseParts[0] == "weather":
                     weatherData = getWeather(responseParts[1])
                     if weatherData['cod'] != 404:
-                        temp = (weatherData['main']['temp'] - 273.15) * 9/5 + 32 #kelvin to fahrenheit
-                        voiceResponse(str(temp)+" Fahrenheit")
+                        temp = (weatherData['main']['temp'] - 273.15)  #kelvin to fahrenheit
+                        cel=int(temp)
+                        voiceResponse(str(cel)+" Degree Celsius")
                     else:
                         voiceResponse("There is some problem in getting weather data")
                 elif responseParts[0] == "joke":
@@ -67,7 +68,7 @@ while True:
                     voiceResponse(response)
 
             else:
-                voiceResponse("I couldn't get you")
+                voiceResponse("\nI couldn't get you")
     except sr.UnknownValueError as e:
         print (e)
         
