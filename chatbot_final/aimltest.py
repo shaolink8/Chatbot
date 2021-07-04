@@ -2,10 +2,10 @@ import aiml
 import json
 import requests
 import wikipedia
-import pyttsx
+import pyttsx3
 import speech_recognition as sr
 
-speechEngine = pyttsx.init()
+speechEngine = pyttsx3.init()
 r = sr.Recognizer()
 mic = sr.Microphone()
 
